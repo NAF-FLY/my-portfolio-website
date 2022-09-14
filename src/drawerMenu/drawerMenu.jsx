@@ -1,6 +1,10 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './drawerMenu.module.css';
 
 export const DrawerMenu = () => {
+
+    const [click, setClick] = useState(false);
 
     let cssProperties = {},
         cssProperties1 = {},
@@ -26,36 +30,46 @@ export const DrawerMenu = () => {
 
     return (
         <ul>
-            <li style={cssProperties}>
-                <span className="icon">
-                    <ion-icon name="home-outline"></ion-icon>
-                </span>
-                <small className="title">Home</small>
-            </li>
-            <li style={cssProperties1}>
-                <span className="icon">
-                    <ion-icon name="flash-outline"></ion-icon>
-                </span>
-                <small className="title">Skills</small>
-            </li>
-            <li style={cssProperties2}>
-                <span className="icon">
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>
-                <small className="title">Projects</small>
-            </li>
-            <li style={cssProperties3}>
-                <span className="icon">
-                    <ion-icon name="share-social-outline"></ion-icon>
-                </span>
-                <small className="title">Open Source</small>
-            </li>
-            <li style={cssProperties4}>
-                <span className="icon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </span>
-                <small className="title">Contact</small>
-            </li>
+            <Link to='/'>
+                <li style={cssProperties}>
+                    <span className="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <small className="title">Home</small>
+                </li>
+            </Link>
+            <Link to='/skills'>
+                <li style={cssProperties1}>
+                    <span className="icon">
+                        <ion-icon name="flash-outline"></ion-icon>
+                    </span>
+                    <small className="title">Skills</small>
+                </li>
+            </Link>
+            <Link to='/projects'>
+                <li style={cssProperties2}>
+                    <span className="icon">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                    </span>
+                    <small className="title">Projects</small>
+                </li>
+            </Link>
+            <Link to='/sources'>
+                <li style={cssProperties3}>  
+                    <span className="icon">
+                        <ion-icon name="share-social-outline"></ion-icon>
+                    </span>
+                    <small className="title">Sources</small>
+                </li>
+            </Link>
+            <Link to='/contact'>
+                <li style={cssProperties4}>
+                    <span className="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <small className="title">Contact</small>
+                </li>
+            </Link>
         </ul>
     )
 }
